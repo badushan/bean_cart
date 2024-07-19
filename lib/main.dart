@@ -1,4 +1,6 @@
 import 'package:bean_cart/cartui.dart';
+import 'package:bean_cart/module/my_cart/view/mycart.dart';
+import 'package:bean_cart/tgglebttn.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: Cartui(),
+      home: Tgglebttn(),
     );
   }
 }
