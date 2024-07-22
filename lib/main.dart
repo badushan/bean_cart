@@ -1,7 +1,8 @@
+import 'package:bean_cart/app_pages.dart';
 import 'package:bean_cart/cartui.dart';
-import 'package:bean_cart/module/my_cart/view/mycart.dart';
 import 'package:bean_cart/tgglebttn.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: Tgglebttn(),
+      home: const Cartui(),
+      getPages: AppPages.pages,
     );
   }
 }

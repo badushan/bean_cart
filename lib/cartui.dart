@@ -90,9 +90,30 @@ class _CartuiState extends State<Cartui> {
                         ),
                       ),
                     ),
-                    subtitle: const Text('\$ 42.50',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16)),
+                    subtitle: Obx(
+                      () => RichText(
+                        text: TextSpan(
+                          children: [
+                            const TextSpan(
+                              text: '\$ ',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '${controller.totalprice}',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                     trailing: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -132,24 +153,44 @@ class _CartuiState extends State<Cartui> {
                           color: Color(0xFF041444),
                           fontWeight: FontWeight.bold),
                     ),
-                    subtitle: const Padding(
-                      padding: EdgeInsets.only(right: 40.0),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.only(right: 40.0),
                       child: Column(
                         children: [
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(right: 0.0),
                             child: Text(
                               'beans-250g',
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(right: 20.0),
+                            padding: const EdgeInsets.only(right: 40.0),
                             child: Padding(
-                              padding: EdgeInsets.only(right: 0.0),
-                              child: Text('\$60.00',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold)),
+                              padding: const EdgeInsets.only(right: 0.0),
+                              child: Obx(
+                                () => RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      const TextSpan(
+                                        text: '\$ ',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: '${controller.totalprice1}',
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
                           )
                         ],

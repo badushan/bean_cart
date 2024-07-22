@@ -1,4 +1,5 @@
 import 'package:bean_cart/buttoncontroller.dart';
+import 'package:bean_cart/module/my_cart/view/mycart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,19 +23,21 @@ class _TgglebttnState extends State<Tgglebttn> {
       child: Center(
         child: Column(
           children: [
-            CupertinoSwitch(
-              value: _isOn,
-              onChanged: (value) {
-                setState(() {
-                  _isOn = value;
-                });
-              },
+            Expanded(
+              child: Switch(
+                value: _isOn,
+                onChanged: (value) {
+                  setState(() {
+                    _isOn = value;
+                  });
+                },
+              ),
             ),
             TextButton(
                 onPressed: () {
-                  bController;
+                  Get.to(const Mycart());
                 },
-                child: Text('Page 2'))
+                child: const Text('Page 2'))
           ],
         ),
       ),
